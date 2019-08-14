@@ -115,7 +115,7 @@ class Mailer extends BaseMailer
     protected function sendSwiftMessage($message, $driver = null)
     {
         if ($this->events) {
-            $this->events->fire(new MessageSending($message));
+            $this->events->dispatch(new MessageSending($message));
         }
 
         if (!$driver)
